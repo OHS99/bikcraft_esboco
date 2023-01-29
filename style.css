@@ -1,0 +1,168 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    background: #f7f7f7;
+    display: grid;
+    gap: 2.3rem;
+    justify-items: center;
+    margin-top: 3.8rem;
+  }
+
+  img{
+    max-width: 100%;
+    display: block;
+  }
+
+  p,h1,h2{
+    margin: 0rem;
+  }
+
+
+header{/*deixar o menu de itens de forma horizontal*/
+    display: flex;
+    flex-wrap: wrap;/*serve para, quando quebrar o texto, fazer a quebra de um jeito correto*/
+    gap: 1.1rem;/*separa um botão do outro*/
+    justify-content: center;/*alinhar os botões no centro*/
+    text-decoration: none;
+}
+
+
+header a{
+    background: white;
+    text-decoration: none;
+    padding: 0.61rem;
+    border-radius: 5px;
+    color: black;
+    text-transform: uppercase;/*deixa o texto em caixa alta*/
+    border: white solid 2px;
+  }
+
+header a:hover{
+  border: #e21 solid 2px;
+}
+
+main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1000px;
+}
+
+.text{
+    background: #fff;
+    padding: 2rem;
+    text-align: right;
+    position: relative;
+    display: grid;/*nesse caso não coloca 1fr 1fr nas grids, pois a tela se dividirá em 3, visto que a imagem é considerada como uma grid tbm*/
+    gap: 1.2rem;
+    align-content: center;
+    justify-items: end;/*mantém o botão alinhado no fim do grid*/
+  }
+
+  .vermais{
+    background: #e21;
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    text-decoration: none;
+    
+  }
+
+  .introducao-cover img{
+    object-fit: cover;
+    height: 100%;
+  }
+
+  .vermais:hover{
+    background-color: rgb(156, 17, 4);
+
+  }
+
+  .vantagens{
+    text-align: right;
+    font-size: 4rem;
+    padding: 2.6rem;
+    align-self: center;
+    text-transform: uppercase;
+    color: gray;
+    opacity: 0.4;
+    background-image: url(./img/onda.svg);
+
+  }
+
+  .especificacao{
+    display: grid;
+    grid-template-columns: 1fr;
+    background: #fff;
+    padding: 2rem;
+    gap: 1rem;
+    border-left: 4px solid transparent;
+  }
+  .item{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap:1.2rem;
+    padding:1.2rem;
+    justify-items: start;
+    text-align: left;
+  }
+  .item p, .item h3{
+    grid-column: 2;
+
+  }
+  .svg{
+    position: flex;
+    padding-top: 1rem;
+  }
+
+    .item:hover{
+      border-left: #e21 solid 3px;
+    }
+    .item:nth-child(odd) {
+      background: #f7f7f7; }
+
+    ul{
+      list-style: none;
+    }
+
+footer{
+    background: #fff;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    box-sizing: border-box;
+    margin: 0px;
+    font-weight: 600;
+  }
+
+
+  @media(max-width: 600px){/*site responsivo*/
+    body{
+      margin-top: 15px;
+      padding:5px;
+      gap: 30px;
+    }
+    header{
+      display: absolute;
+    }
+    header a{
+      align-self: right;
+      padding: 0.3rem;
+    }
+    main{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      max-width: fit-content;
+    }
+    .vantagens{
+      max-width: fit-content;
+      word-wrap: break-all;
+      font-size: 3rem;
+      text-align: center;
+    }
+    .text{
+      text-align: left;
+      justify-items:start;
+    }
+
+  }
