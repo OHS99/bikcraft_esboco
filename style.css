@@ -1,7 +1,29 @@
+:root{
+  --cor-primaria:#e21;
+  --cor-primaria-escura:#900;
+  --fundo-1: #f7f7f7;
+  --fundo-2: #ffffff;
+  --texto: #000000;
+  --subtitulo: rgba(0, 0, 0, 0.2);
+  --onda: url('./img/onda-clara.svg')
+}
+
+
+
+@media (prefers-color-scheme: dark){
+  :root{
+    --fundo-1:#111111; 
+    --fundo-2:#000000;
+    --texto: #ffffff;
+    --subtitulo: rgba(255, 255, 255, 0.2);
+    --onda: url('./img/onda-escura.svg')
+  }
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0px;
-    background: #f7f7f7;
+    background: var(--fundo-1);
     display: grid;
     gap: 2.3rem;
     justify-items: center;
@@ -28,17 +50,17 @@ header{/*deixar o menu de itens de forma horizontal*/
 
 
 header a{
-    background: white;
+    background: var(--ffffff);
     text-decoration: none;
     padding: 0.61rem;
     border-radius: 5px;
-    color: black;
+    color: var(--texto);
     text-transform: uppercase;/*deixa o texto em caixa alta*/
-    border: white solid 2px;
+    border: var(--ffffff) solid 2px;
   }
 
 header a:hover{
-  border: #e21 solid 2px;
+  border: var(--cor-primaria) solid 2px;
 }
 
 main{
@@ -48,7 +70,7 @@ main{
 }
 
 .text{
-    background: #fff;
+    background: var(--fundo-2);
     padding: 2rem;
     text-align: right;
     position: relative;
@@ -59,8 +81,8 @@ main{
   }
 
   .vermais{
-    background: #e21;
-    color: #fff;
+    background: var(--cor-primaria);
+    color: #ffffff;
     padding: 1rem 2rem;
     border-radius: 4px;
     text-transform: uppercase;
@@ -74,7 +96,7 @@ main{
   }
 
   .vermais:hover{
-    background-color: rgb(156, 17, 4);
+    background-color: var(--cor-primaria-escura);
 
   }
 
@@ -84,16 +106,16 @@ main{
     padding: 2.6rem;
     align-self: center;
     text-transform: uppercase;
-    color: gray;
+    color: var(--subtitulo);
     opacity: 0.4;
-    background-image: url(./img/onda.svg);
+    background-image: var(--onda);
 
   }
 
   .especificacao{
     display: grid;
     grid-template-columns: 1fr;
-    background: #fff;
+    background: var(--fundo-2);
     padding: 2rem;
     gap: 1rem;
     border-left: 4px solid transparent;
@@ -105,6 +127,7 @@ main{
     padding:1.2rem;
     justify-items: start;
     text-align: left;
+    color:var(--texto)
   }
   .item p, .item h3{
     grid-column: 2;
@@ -116,23 +139,28 @@ main{
   }
 
     .item:hover{
-      border-left: #e21 solid 3px;
+      border-left: var(--cor-primaria) solid 3px;
     }
     .item:nth-child(odd) {
-      background: #f7f7f7; }
+      background: var(--fundo-1); }
 
     ul{
       list-style: none;
     }
 
+.text{
+  color:var(--texto);
+}
+
 footer{
-    background: #fff;
+    background: var(--fundo-2);
     width: 100%;
     text-align: center;
     padding: 1rem;
     box-sizing: border-box;
     margin: 0px;
     font-weight: 600;
+    color: var(--texto);
   }
 
 
